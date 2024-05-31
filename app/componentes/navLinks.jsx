@@ -9,7 +9,8 @@ import {
 import clsx from 'clsx'
 
 const links = [
-  { name: 'Inicio', href: '/inicio', icon: HomeIcon },
+  { name: 'Inicio', href: '/', icon: HomeIcon },
+  {name: 'Clima de hoy', href:'/horas',  icon: HomeIcon}
  
 ];
 

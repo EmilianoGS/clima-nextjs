@@ -1,19 +1,22 @@
-import Image from "next/image";
 import styles from "./page.module.css";
+import { IoIosSunny  } from "react-icons/io";
+import Link from 'next/link';
+import Actual from './actual'
+import SideNav from './componentes/sidenav';
 
 
 export default function Home() {
+
+  const fecha=new Date()
+  const dia= `${fecha.getDate()}/${fecha.getMonth()+1}/${fecha.getFullYear()} `
+
   return (
-    <main className="flex min-h-screen flex-col p-6">
-    <div className="flex h-20 shrink-0 items-end rounded-lg bg-white p-4 md:h-52">
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+    <main className="flex min-h-screen gap-3 p-6 text-midnight p">   
+    
+      <div className="flex items-center grow text-xl rounded-lg bg-white/40 p-4 relative">
+        <IoIosSunny className="size-9" />
+        <Actual />
+        
       </div>
     </main>
   );

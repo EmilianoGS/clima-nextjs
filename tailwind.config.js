@@ -19,7 +19,7 @@ module.exports = {
         'silver': '#ecebff',
         'bubble-gum': '#ff77e9',
         'bermuda': '#78dcca',
-        blue: {
+         blue: {
           400: '#2589FE',
           500: '#0070F3',
           600: '#2F6FEB',
