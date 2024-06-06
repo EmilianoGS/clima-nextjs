@@ -17,7 +17,6 @@ export default function RootLayout({ children }) {
         <div className="w-full flex-none md:w-64 ">
           <SideNav />
         </div>
-       
         {children}
         </div>       
       </body>

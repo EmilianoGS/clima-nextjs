@@ -1,13 +1,14 @@
 import React from 'react'
 import { fetchClima } from '@/app/data/dataClima';
-import { campos_y_unidades } from '../data/campos_y_unidades'
+
 import Card from '../componentes/card'
 
-const Horas = async (props) => {
+const Dias = async (props) => {
 
   const cardStyle='bg-white/50 shadow-md p-4 rounded-lg text-sm '
-  const reqHoras= await fetchClima('hoy')
-  const dataHoras = reqHoras.data.timelines[0].intervals
+  const reqDias= await fetchClima('dias')
+  console.log(reqDias)
+  const dataHoras = reqDias.data.timelines[0].intervals
   
   const temps = dataHoras.reduce(
     (acc, elm) => {acc.push(parseFloat(elm.values.temperature));
@@ -32,4 +33,4 @@ const Horas = async (props) => {
   )
 }
 
-export default Horas
+export default Dias

@@ -5,7 +5,7 @@ export async function fetchClima(param) {
   var response = null;
   var data= null;
   var ahora= new Date()
-  console.log('Ahora: ', ahora)
+  var u= param=='dias' ? 'd' : param=='hoy' ? 'h' : null
   const fields = campos_y_unidades.reduce(
     (acc, elem) => {
         acc.push(elem.param);
@@ -26,25 +26,23 @@ const optionsHoras = {
     location: '-34.36, -58.22',
     fields: fields,
     units: 'metric',
-    timesteps: ['1h'],
+    timesteps: [`1${u}`],
     startTime: 'now',
-    endTime: 'nowPlus6h'
+    endTime : param=='hoy' ? 'nowPlus6h' : 'nowPlus1d'
+    
   })
 };
 
-  console.log('fields', fields)
     try {       
           
           if(param=='current'){
             response = await fetch('https://api.tomorrow.io/v4/weather/realtime?location=-34.36,-58.22&apikey=RlMNRNLl5dUBuwDYoGalIrE9EUklc68O')
              data = await response?.json();
-            console.log('data ', data)
-
           }
-          else if(param=='hoy'){
+          else if(param=='hoy' || param=='dias'){
                           
             response = await fetch('https://api.tomorrow.io/v4/timelines?apikey=RlMNRNLl5dUBuwDYoGalIrE9EUklc68O', optionsHoras)          
-            
+            console.log('Option: ', optionsHoras, 'response ', response)
              data = await response?.json();
              
           }
