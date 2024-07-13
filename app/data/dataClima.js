@@ -28,23 +28,20 @@ const optionsHoras = {
     units: 'metric',
     timesteps: [`1${u}`],
     startTime: 'now',
-    endTime : param=='hoy' ? 'nowPlus6h' : 'nowPlus1d'
+    endTime : param=='hoy' ? 'nowPlus6h' : 'nowPlus5d'
     
   })
 };
 
-    try {       
-          
+    try {
           if(param=='current'){
             response = await fetch('https://api.tomorrow.io/v4/weather/realtime?location=-34.36,-58.22&apikey=RlMNRNLl5dUBuwDYoGalIrE9EUklc68O')
              data = await response?.json();
           }
           else if(param=='hoy' || param=='dias'){
-                          
             response = await fetch('https://api.tomorrow.io/v4/timelines?apikey=RlMNRNLl5dUBuwDYoGalIrE9EUklc68O', optionsHoras)          
-            console.log('Option: ', optionsHoras, 'response ', response)
+           
              data = await response?.json();
-             
           }
        
         return data;

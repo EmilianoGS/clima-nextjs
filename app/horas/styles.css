@@ -1,0 +1,40 @@
+.cardStyle{
+    transition: max-height .7s ease;
+}
+.swiper-slide-active{
+    color:rgb(61, 42, 165) !important;
+}
+.swiper-slide-active .tempCard{
+    font-size: 1.3rem;
+}
+.swiper-slide-active .cardStyle{    
+    max-height: 150px !important;
+}
+.swiper-slide-active .cardStyle .header{
+    font-size: 1.3rem;
+}
+.swiper-slide-active .fts{
+    font-size: 1.7rem;
+     
+}
+
+.swiper-slide-next, .swiper-slide-prev{    
+    width: 120px;
+    cursor: default;
+    color:rgb(138, 128, 197) !important;
+}
+.swiper-slide-next .fts, .swiper-slide-prev .fts{
+    font-size: 1rem;
+}
+
+.swiper-slide-next .cardStyle {
+    max-height: fit-content;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1),rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2) ,rgba(0,0,0,0));
+}
+.swiper-slide-prev .cardStyle{
+    max-height: fit-content;
+    background: linear-gradient(to right,rgba(0,0,0,0) ,rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3) ,rgba(255, 255, 255, 1));
+}
+.swiper-wrapper{
+    align-items: center !important;
+}

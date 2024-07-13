@@ -1,8 +1,11 @@
 h1{
     font-size: 1.5rem;
 }
-.imgPrecip{
-  
+.fts{
+    font-size: 2rem;
+}
+.ftST{
+    font-size: 1rem;
 }
 .cntDatos{
     position:absolute;

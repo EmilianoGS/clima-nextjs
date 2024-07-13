@@ -1,0 +1,16 @@
+.dias_card{
+    width: fit-content;
+}
+.dias_card2{
+    flex-grow:1
+}
+.fts{
+  font-size: 2rem;
+  line-height : 1;
+}
+.ftFira{
+    font-family: 'Fira', sans-serif;
+}
+.ftLato{
+    font-family: 'Lato', sans-serif;
+}
