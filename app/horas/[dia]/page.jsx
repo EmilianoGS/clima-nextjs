@@ -1,12 +1,17 @@
 import React from 'react'
 import { fetchClima } from '@/app/data/dataClima';
-import Carousel from './carousel'
+import Carousel from '../carousel'
 
-const Horas = async (props) => {  
 
-  const reqHoras= await fetchClima('hoy')
-  const dataHoras = reqHoras.data?.timelines[0].intervals
+const Horas = async ({params}) => {  
+
+   
+  const diaHs = params.dia!== 'hoy' ? decodeURIComponent(params.dia) : null
+ console.log('diaHs ', diaHs)
+  const reqHoras= await fetchClima('hoy', diaHs)
  
+  const dataHoras = reqHoras.data?.timelines[0].intervals
+  console.log("Data horas: ", dataHoras)
   const temps = dataHoras.reduce(
     (acc, elm) => {acc.push(parseFloat(elm.values.temperature));
         return acc;

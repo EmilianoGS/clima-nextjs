@@ -10,8 +10,8 @@ import clsx from 'clsx'
 
 const links = [
   { name: 'Inicio', href: '/', icon: HomeIcon },
-  {name: 'Clima de hoy', href:'/horas',  icon: HomeIcon},
-  {name: 'Dias', href:'/dias',  icon: HomeIcon}
+  {name: 'Clima de hoy', href:'/horas/hoy',  icon: HomeIcon},
+  {name: 'Próximos días', href:'/dias',  icon: HomeIcon}
 ];
 
 export default function NavLinks() {

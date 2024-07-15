@@ -1,11 +1,20 @@
+h3{
+    font-size: 1.75rem;
+}
 .dias_card{
-    width: fit-content;
+    width: 25%;
 }
 .dias_card2{
-    flex-grow:1
+    width:50%;
+}
+.filaDias{
+    margin-block: 1rem;
+}
+.filaDias p{
+    margin-bottom: .3rem;
 }
 .fts{
-  font-size: 2rem;
+  font-size: 1.75rem;
   line-height : 1;
 }
 .ftFira{
