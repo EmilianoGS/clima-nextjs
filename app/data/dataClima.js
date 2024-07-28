@@ -2,7 +2,7 @@ import { apiKeyMet } from '../../configuracion/environment';
 import { campos_y_unidades } from './campos_y_unidades';
 
 export async function fetchClima(param, fecha=null) { 
-  console.log('Param ', fecha)
+  
   var response = null;
   var data= null;
   var ahora= new Date()
@@ -17,6 +17,7 @@ export async function fetchClima(param, fecha=null) {
 );
 
     function calcularEndTime(fechaInicio) {
+      console.log("fechainicio ", fechaInicio)
       // Convierte la fecha de inicio en un objeto Date
       const fecha = new Date(fechaInicio);
 
@@ -45,7 +46,7 @@ const optionsHoras = {
     
   })
 };
-console.log("optionsHoras ", optionsHoras)
+
     try {
           if(param=='current'){
             response = await fetch('https://api.tomorrow.io/v4/weather/realtime?location=-34.36,-58.22&apikey=RlMNRNLl5dUBuwDYoGalIrE9EUklc68O')
@@ -55,7 +56,7 @@ console.log("optionsHoras ", optionsHoras)
             response = await fetch('https://api.tomorrow.io/v4/timelines?apikey=RlMNRNLl5dUBuwDYoGalIrE9EUklc68O', optionsHoras)          
            
              data = await response?.json();
-             console.log("Data: ", data)
+             
           }
        
         return data;

@@ -85,6 +85,7 @@
 
 html,
 body {
+  height:100%;
   max-width: 100vw;
   overflow-x: hidden;
 }
@@ -101,6 +102,10 @@ body {
   font-family: 'Lato';
   src: url('/fonts/Lato/Lato-Regular.ttf');
 }
+@font-face {
+  font-family: 'Lato-Bold';
+  src: url('/fonts/Lato/Lato-Bold.ttf');
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -110,4 +115,21 @@ a {
   html {
     color-scheme: dark;
   }
+}
+p{
+  line-height:1;
+}
+.ftST{
+  font-size: 1rem;
+  line-height:1;
+}
+
+.fts{
+font-size: 1.5rem;
+line-height : 1;
+}
+
+.actual_card{
+  display:flex;
+  align-items:center;
 }

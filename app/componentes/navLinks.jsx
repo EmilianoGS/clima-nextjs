@@ -4,14 +4,15 @@ import { usePathname } from 'next/navigation';
 import {
     UserGroupIcon,
     HomeIcon,
-    DocumentDuplicateIcon,
+    CalendarIcon,
+    ClockIcon,
   } from '@heroicons/react/24/outline';
 import clsx from 'clsx'
 
 const links = [
   { name: 'Inicio', href: '/', icon: HomeIcon },
-  {name: 'Clima de hoy', href:'/horas/hoy',  icon: HomeIcon},
-  {name: 'Próximos días', href:'/dias',  icon: HomeIcon}
+  { name: 'Por horas', href:'/horas/hoy',  icon: ClockIcon},
+  { name: 'Próximos días', href:'/dias',  icon: CalendarIcon}
 ];
 
 export default function NavLinks() {

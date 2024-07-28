@@ -13,7 +13,8 @@ const Card1 = async (props) => {
   
 
     const cardStyle=`${props.page}_card bg-white/50 shadow-md p-4 rounded-lg p-4 gap-4 cardStyle ${props.page}_st`
-    const flexStyle= `${props.page!=='dias' ? 'flex-col' : 'flex items-end'} body gap-3`
+    const flexStyle= `${props.page!=='dias' && props.page!=='horas'? 'flex-col' : 'flex items-end'} body gap-3`
+   
 
     const iconosLluvia= [
         {ico: <IoIosSunny />, porc: 0},
@@ -31,25 +32,24 @@ const Card1 = async (props) => {
                 : iconoMasCercano;
         }, iconosLluvia[0].porc);
     }
+
     const iconoPorc = asignarIconoPorcentajeLluvia(props.elem?.precipitationProbability ||  0 )
     const iconoLluvia= iconosLluvia.find((elm)=> elm.porc == iconoPorc)
  
 
    return(
-        <>              
-         {props.page=='horas'?
-        props.hour ? `${props.hour} hs` : null
-        :      
-        null}
+        <> 
+       
         <div className={cardStyle}>
             <div className={flexStyle}>
                 {ppalKeys.map((item, i)=>{
                 const st= item.key=='temperatureApparent' ? 'ST' : ''
-                const existeClave = Object.keys(props.elem).indexOf(item.key!==-1)                         
+                const existeClave = Object.keys(props.elem).indexOf(item.key!==-1) 
+
                 return(
                     <div className='flex'>                       
                         {i == 0 ? 
-                        <div className='flex items-center header' >
+                        <div className='flex items-center header text-zinc-700' >
                             {iconoLluvia.ico}                            
                         </div> : null}
                         { existeClave ?                        

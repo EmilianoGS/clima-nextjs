@@ -48,7 +48,7 @@
   }
   
   function hourlyTemps(data){
-    console.log('Data ', data)
+    
     return (
       data?.timelines[0].intervals?.map(interval => ({
         time: interval.startTime,
@@ -62,7 +62,7 @@
     if (!data) return null;   
     let maxTemp = -Infinity;
     let minTemp = Infinity;
-    // console.log('hourlyTemps(data) ', hourlyTemps(data))
+   
       hourlyTemps(data).forEach(tempData => {
         if (tempData.temperature > maxTemp) {
           maxTemp = tempData.temperature;
