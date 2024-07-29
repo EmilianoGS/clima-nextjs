@@ -9,6 +9,9 @@
 .maxymin{
     font-size: 1rem;
 }
+.horas_card{
+    width:20%;
+}
 .cardStyle{
     transition: max-height .7s ease;
 }
