@@ -18,17 +18,17 @@ const Card3 = async (props) => {
             <div className='flex-col grow'>
                 Max/Min
                 {maxminKeys.map((item, i)=>{
-                const existeClave = Object.keys(props.elem).indexOf(item.key!==-1)                         
-                return(
-                    <>
-                      { existeClave ?
-                          <p className={item.style || '' }>
-                            {` ${props.elem[item.key]} ${item.u} `}</p>
-                          :
-                          <></>
-                      }
-                    </>
-                )
+                    const existeClave = Object.keys(props.elem).indexOf(item.key!==-1)                         
+                    return(
+                        <>
+                        { existeClave ?
+                            <p className={item.style || '' }>
+                              {` ${props.elem[item.key]} ${item.u} `}</p>
+                            :
+                            <></>
+                        }
+                        </>
+                    )
                 })}
             </div>
         </div>                       

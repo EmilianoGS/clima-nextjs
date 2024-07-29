@@ -12,20 +12,16 @@ export default async function Actual() {
    const dataActual=await fetchClima('current') 
    const datahoy= await fetchDataHoy()
    const actual= dataActual?.data?.values
-   const time= dataActual?.data?.time.slice(0,10)
-  
+   const time= dataActual?.data?.time?.slice(0,10)  
    const maxYmin= calculateMaxMinTemperatures(datahoy?.data)
-
-
-  // Obtener la fecha en formato dd/mm/yyyy
  
    return (
     <>    
       <div className="flex flex-col items-center gap-6 md:grid-cols-4 lg:grid-cols-8 text-midnight w-full">
         <Suspense fallback={'Cargando...'}>
           <div className="w-2/5">
-            <p className='text-2xl text-red-400 my-3'>{dia()}, {fecha()}</p>
-            <div className='flex gap-y-2 flex-col '>
+            <p className='text-2xl text-[#4f5a6f] my-3'>{dia()}, {fecha()}</p>
+            <div className='flex gap-y-2 flex-col bg-[#f7f7e642] p-4 rounded-md'>
               <div className='flex gap-2 items-stretch'>
                 <Card1 page='actual' elem={actual} fecha={time} />
                 <Card3 page='actual' elem={maxYmin} fecha={time} /> 

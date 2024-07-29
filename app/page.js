@@ -1,6 +1,3 @@
-import styles from "./page.module.css";
-import { IoIosSunny  } from "react-icons/io";
-import Link from 'next/link';
 import Actual from './actual'
 
 

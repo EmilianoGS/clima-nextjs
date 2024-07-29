@@ -92,7 +92,7 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background-color: #a8b3f3;
+  background-color: #a3c7b3;
 }
 @font-face {
   font-family: 'Fira';
@@ -127,6 +127,7 @@ p{
 .fts{
 font-size: 1.5rem;
 line-height : 1;
+margin-bottom:0;
 }
 
 .actual_card{

@@ -1,9 +1,8 @@
 h3{
     font-size: 1.75rem;
 }
-
 .dias_card{
-    width: 25%;
+    width: 20%;
 }
 .dias_card2{
     width:50%;
@@ -12,16 +11,14 @@ h3{
     margin-block: 1rem;
 }
 .filaDias p{
-    margin-bottom: .3rem;
+    /* margin-bottom: .3rem;     */
 }
-
 .cntDtos{
     position:absolute;
     top:0;
     left:0;
     z-index: 901;
 }
-
 .ftFira{
     font-family: 'Fira', sans-serif;
 }

@@ -9,11 +9,12 @@ export const metadata = {
   title: "Clima App",
   description: "Proyecto React + NextJS",
 };
-
+// #e7f7a6 var(--tw-gradient-from-position);
+// --tw-gradient-to: rgb(255 255 255 / 0%)
 export default function RootLayout({ children }) {
   return (
     <html lang="en">      
-      <body className="bg-gradient-to-br via-90% from-teal-50 ">
+      <body className="bg-gradient-to-br via-90% from-[#f5e5d0] ">
       <div className="flex  justify-center w-full">
       <div className='flex-col w-5/6 '>
           <div className="w-full flex-none">
