@@ -1,7 +1,7 @@
 import React from 'react'
 import { fetchClima } from '@/app/data/dataClima';
 import ListaHoras from '../listaHoras'
-import '../styles.css'
+
 
 const Horas = async ({params}) => {  
    

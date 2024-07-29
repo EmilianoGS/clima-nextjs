@@ -1,7 +1,7 @@
 import React from 'react'
 import Card1 from '../componentes/card1'
 import Card2 from '../componentes/card2'
-
+import './styles.css'
 import {fecha, dia} from '../funciones/fechas'
 import {Suspense} from 'react'
 
