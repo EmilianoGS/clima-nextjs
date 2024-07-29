@@ -129,7 +129,9 @@ font-size: 1.5rem;
 line-height : 1;
 margin-bottom:0;
 }
-
+.ftLato{
+  font-family: 'Lato'
+}
 .actual_card{
   display:flex;
   align-items:center;

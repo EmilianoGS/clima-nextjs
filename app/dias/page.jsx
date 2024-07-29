@@ -12,8 +12,7 @@ const Dias = async (props) => {
   const reqDias= await fetchClima('dias')  
   const dataDias = reqDias?.data?.timelines? reqDias?.data?.timelines[0].intervals : []
   const h3Style='text-2xl text-zinc-600 my-2'
-   
-  console.log("Data dias ", dataDias)
+
   return (
     <div className='flex flex-col p-4 text-zinc-600 gap-4 ftLato overflow-auto w-full'>
       <div className='w-6/7'>
@@ -32,8 +31,8 @@ const Dias = async (props) => {
                         <Card2 page={'dias'} fecha={fecha} elem={elem.values} />
                       </Suspense>
                       <Link href={`/horas/${elem.startTime}`} className='h-full flex shadow-md' >
-                        <div className='flex bg-white/50 rounded-lg p-4 h-full items-center ftLato'>
-                          <p>Por <br/> horas</p>
+                        <div className='flex bg-white/50 rounded-lg p-4 h-full items-center'>
+                          <p className='ftLato'>Por <br/> horas</p>
                         </div>
                       </Link> 
                     </div>

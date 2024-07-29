@@ -4,15 +4,16 @@ h3{
 .dias_card{
     width: 20%;
 }
+.horas_card{
+    width:20%;
+}
 .dias_card2{
     width:50%;
 }
 .filaDias{
     margin-block: 1rem;
 }
-.filaDias p{
-    /* margin-bottom: .3rem;     */
-}
+
 .cntDtos{
     position:absolute;
     top:0;
@@ -21,7 +22,4 @@ h3{
 }
 .ftFira{
     font-family: 'Fira', sans-serif;
-}
-.ftLato{
-    font-family: 'Lato', sans-serif;
 }

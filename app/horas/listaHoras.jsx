@@ -23,10 +23,10 @@ const ListaHoras = (props) => {
                 </p>
                 <div className="my-5 flex flex-col p-4  bg-[#f7f7e642]">
                     
-                    {data.map((elem, i)=>{
+                    {data?.map((elem, i)=>{
                         const hour= elem.startTime.slice(11,16)
                         return(
-                            <div className="flex gap-3 items-center py-4 last:border-0 border-b border-[#bfbfbf]" key={i}>
+                            <div className="flex filaHoras gap-3 items-center py-4 last:border-0 border-b border-[#bfbfbf]" key={i}>
                                 <p className={fontHora}>
                                     {hour ? `${hour} hs` : null}
                                 </p>
@@ -44,8 +44,7 @@ const ListaHoras = (props) => {
                     })}
                 </div>
             </div>
-            :
-            <p>Cargando...</p>
+           
         </Suspense>
     </>
   )
