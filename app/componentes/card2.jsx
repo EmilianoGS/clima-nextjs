@@ -20,7 +20,7 @@ const Card2 = async (props) => {
     const iconos=[
         {icono: <PiCloudRain />, key: 'precipitationProbability'},
         {icono: <PiWindLight />, key: 'windSpeed'},
-        {icono: '-', key: 'windDirection'},
+        {icono: props.page=='actual' ? '' : '-', key: 'windDirection'},
         {icono: <CiCloudOn />, key: 'cloudCover'},
         {icono: <BsMoisture />, key: 'humidity'}
     ]
@@ -30,7 +30,7 @@ const Card2 = async (props) => {
    return(              
         <div className={cardStyle}> 
             <div className={flexStyle}>
-                {detalleKeys.map((item,i)=>{
+                {detalleKeys?.map((item,i)=>{
                 
                 const existeClave = Object.keys(props.elem).indexOf(item.key!==-1)   
                 const icono = iconos.find((elem)=> elem.key == item.key) 
@@ -40,7 +40,6 @@ const Card2 = async (props) => {
                     <div className={`flex ${i>=anteUltimo? 'mx-0': 'mx-2'} gap-1 items-center ${props.page!=='dias' && props.page!=='horas'? 'py-2 last:border-0 border-b border-neutral-600' : ''}`}>
                     
                     <div className='text-zinc-700'>
-                      
                         {icono ? icono.icono : null }
                     </div>  
                       { existeClave ?

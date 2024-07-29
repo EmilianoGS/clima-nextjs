@@ -10,7 +10,7 @@ export async function fetchClima(param, fecha=null){
     var u= param=='dias' ? 'd' : param=='hoy' ? 'h' : null
     const fields = campos_y_unidades.reduce(
       (acc, elem) => {
-          acc.push(elem.param);
+          acc.push(elem?.param);
           return acc;
       },
       []

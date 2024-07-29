@@ -7,9 +7,9 @@ const Horas = async ({params}) => {
    
   const diaHs = params.dia!== 'hoy' ? decodeURIComponent(params.dia) : null
   const reqHoras = await fetchClima('hoy', diaHs)    
-  const dataHoras = reqHoras.data?.timelines[0].intervals
+  const dataHoras = reqHoras?.data?.timelines? reqHoras?.data?.timelines[0].intervals : []
   
-  const temps = dataHoras.reduce(
+  const temps = dataHoras?.reduce(
     (acc, elm) => {acc.push(parseFloat(elm.values.temperature));
         return acc;
     },[]);

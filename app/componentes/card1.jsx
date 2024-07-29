@@ -37,7 +37,7 @@ const Card1 = async (props) => {
 
    return(
         <>
-        <div className={`flex items-center header text-[50px] ${iconoNub ? 'text-indigo-600' : 'text-orange-500'} px-4 mx-3`} >
+        <div className={`flex items-center header text-[50px] ${iconoNub || props.elem?.precipitationProbability > 0? 'text-indigo-600' : 'text-orange-500'} px-4 mx-3`} >
             {iconoNub ? <CiCloudOn/> : iconoLluvia.ico}                            
         </div> 
         <div className={cardStyle}>

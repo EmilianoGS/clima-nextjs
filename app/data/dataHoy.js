@@ -50,10 +50,11 @@
   function hourlyTemps(data){
     
     return (
-      data?.timelines[0].intervals?.map(interval => ({
-        time: interval.startTime,
-        temperature: interval.values.temperature,
+      data?.timelines && data?.timelines[0]? data?.timelines[0].intervals?.map(interval => ({
+        time: interval?.startTime,
+        temperature: interval?.values?.temperature,
       }))
+      :[]
     )
   };
 
@@ -64,11 +65,11 @@
     let minTemp = Infinity;
    
       hourlyTemps(data).forEach(tempData => {
-        if (tempData.temperature > maxTemp) {
-          maxTemp = tempData.temperature;
+        if (tempData?.temperature > maxTemp) {
+          maxTemp = tempData?.temperature;
         }
-        if (tempData.temperature < minTemp) {
-          minTemp = tempData.temperature;
+        if (tempData?.temperature < minTemp) {
+          minTemp = tempData?.temperature;
         }
       }
     );
