@@ -11,9 +11,14 @@
 }
 .horas_card{
     width:20%;
+    display:flex;
+    align-items:center;
 }
 .cardStyle{
     transition: max-height .7s ease;
+}
+.ancho65{
+    min-width: 65%;
 }
 .diaclima{
 font-family: 'Lato';

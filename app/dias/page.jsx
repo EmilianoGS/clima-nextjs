@@ -25,13 +25,15 @@ const Dias = async (props) => {
                 return(
                   <div className='filaDias last:border-0 border-b border-[#bfbfbf] pb-4'>
                     <p className='mb-2 text-lg text-[#4f5a6f]'>{dia(elem.startTime)}, {fecha}</p>
-                    <div className='flex gap-2 items-stretch h-[65px]'>
+                    <div className='flex sm:flex-row flex-col gap-2 items-end lg:items-stretch 
+                    
+                    '>
                       <Suspense fallback={<p>Cargando...</p>}>
                         <Card1 page={'dias'} fecha={fecha} elem={elem.values} />
                         <Card2 page={'dias'} fecha={fecha} elem={elem.values} />
                       </Suspense>
-                      <Link href={`/horas/${elem.startTime}`} className='h-full flex shadow-md' >
-                        <div className='flex bg-white/50 rounded-lg p-4 h-full items-center'>
+                      <Link href={`/horas/${elem.startTime}`} className='h-full flex shadow-md w-full sm:w-fit' >
+                        <div className='w-full sm:w-fit flex bg-white/50 rounded-lg p-4 h-full items-center'>
                           <p className='ftLato'>Por <br/> horas</p>
                         </div>
                       </Link> 

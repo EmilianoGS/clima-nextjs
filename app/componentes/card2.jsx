@@ -8,14 +8,14 @@ import { CiCloudOn } from "react-icons/ci";
 const Card2 = async (props) => {
 
     const detalleKeys=[
-     {key:'precipitationProbability', u:'%', style: 'text-xl', desc:'Probabilidad de lluvia'},
-     {key:'humidity',u:'%', style: 'text-xl', desc:'Humedad'},
-     {key:'cloudCover',u:'%', style: 'text-xl', desc:'Nubosidad'}, 
-     {key:'windSpeed', u:'m/s', desc:'Velocidad del viento'}, 
-     {key:'windDirection', u:'°', desc: 'Dirección del viento'}
+     {key:'precipitationProbability', u:'%', style: 'lg:text-xl text-base', desc:'Probabilidad de lluvia'},
+     {key:'humidity',u:'%', style: 'lg:text-xl text-base', desc:'Humedad'},
+     {key:'cloudCover',u:'%', style: 'lg:text-xl text-base', desc:'Nubosidad'}, 
+     {key:'windSpeed', u:'m/s', style:'lg:text-xl text-base', desc:'Velocidad del viento'}, 
+     {key:'windDirection', u:'°',style:'lg:text-xl text-base', desc: 'Dirección del viento'}
      ]
   
-    const cardStyle=`${props.page!=='dias' ? 'h-fit' : `${props.page}_card2`} text-xl bg-white/50 shadow-md p-4 rounded-lg text-sm p-4 gap-4 cardStyle ${props.page=='horas' || props.page=='dias' ? 'flex-1' : ''}`
+    const cardStyle=`md:w-full ${props.page!=='dias' ? '' : `${props.page}_card2`} text-xl bg-white/50 shadow-md lg:p-4 p-2 rounded-lg text-sm p-4 gap-4 cardStyle ${props.page=='horas' || props.page=='dias' ? 'lg:flex-1' : ''} items-center flex ${props.page=='horas'? 'ancho65' : ''}`
     
     const iconos=[
         {icono: <PiCloudRain />, key: 'precipitationProbability'},
@@ -25,7 +25,7 @@ const Card2 = async (props) => {
         {icono: <BsMoisture />, key: 'humidity'}
     ]
 
-    const flexStyle= `${props.page!=='dias' && props.page!=='horas'? 'flex-col' : 'flex items-center'} body gap-1`
+    const flexStyle= `${props.page!=='dias' && props.page!=='horas'? 'flex-col' : 'flex flex-col sm:flex-row sm:items-center items-start'} body gap-1  w-1/2 flex-wrap lg:flex-nowrap`
 
    return(              
         <div className={cardStyle}> 
@@ -37,7 +37,7 @@ const Card2 = async (props) => {
                 const anteUltimo= detalleKeys.length-2
 
                 return(
-                    <div className={`flex ${i>=anteUltimo? 'mx-0': 'mx-2'} gap-1 items-center ${props.page!=='dias' && props.page!=='horas'? 'py-2 last:border-0 border-b border-neutral-600' : ''}`}>
+                    <div className={`flex ${i>=anteUltimo? 'mx-0': 'lg:mx-2 mx-1'} gap-1 items-center ${props.page!=='dias' && props.page!=='horas'? 'py-2 last:border-0 border-b border-neutral-600' : ''}`}>
                     
                     <div className='text-zinc-700'>
                         {icono ? icono.icono : null }
@@ -46,7 +46,7 @@ const Card2 = async (props) => {
                          
                           <div className="flex items-end gap-3">
                              
-                            <p className={`${item.style || '' } mx-1`}>
+                            <p className={`${item.style || '' } mx-1 text-nowrap`}>
                                 {` ${props.elem[item.key]} ${item.u}`}
                             </p>
                             {props.page=='actual'?

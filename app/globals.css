@@ -92,7 +92,8 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background-color: #a3c7b3;
+  /* background-color: #a3c7b3; */
+  background-color: #78b5ac;
 }
 @font-face {
   font-family: 'Fira';

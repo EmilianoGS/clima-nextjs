@@ -21,3 +21,16 @@ h3{
 .ftFira{
     font-family: 'Fira', sans-serif;
 }
+
+@media all and (max-width:640px){
+    .dias_card2{
+        width:100%;
+    }  
+    
+}
+@media all and (max-width:1024px){
+    .dias_card{
+        width:100%;
+    }  
+    
+}

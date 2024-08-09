@@ -7,7 +7,7 @@ export default function Home() {
   const dia= `${fecha.getDate()}/${fecha.getMonth()+1}/${fecha.getFullYear()} `
 
   return (
-    <main className="flex min-h-screen gap-3 p-6 text-midnight p"> 
+    <main className="flex min-h-screen gap-3 lg:p-6 p-1 text-midnight p"> 
         <Actual />
     </main>
   );
