@@ -22,7 +22,7 @@ const Card3 = async (props) => {
                     return(
                         <>
                         { existeClave ?
-                            <p className={item.style || '' }>
+                            <p className={`${item.style || '' } text-nowrap`}>
                               {` ${props.elem[item.key]} ${item.u} `}</p>
                             :
                             <></>

@@ -14,8 +14,7 @@ const Card2 = async (props) => {
      {key:'windSpeed', u:'m/s', style:'lg:text-xl text-base', desc:'Velocidad del viento'}, 
      {key:'windDirection', u:'°',style:'lg:text-xl text-base', desc: 'Dirección del viento'}
      ]
-  
-    const cardStyle=`md:w-full ${props.page!=='dias' ? '' : `${props.page}_card2`} text-xl bg-white/50 shadow-md lg:p-4 p-2 rounded-lg text-sm p-4 gap-4 cardStyle ${props.page=='horas' || props.page=='dias' ? 'lg:flex-1' : ''} items-center flex ${props.page=='horas'? 'ancho65' : ''}`
+      
     
     const iconos=[
         {icono: <PiCloudRain />, key: 'precipitationProbability'},
@@ -25,8 +24,38 @@ const Card2 = async (props) => {
         {icono: <BsMoisture />, key: 'humidity'}
     ]
 
-    const flexStyle= `${props.page!=='dias' && props.page!=='horas'? 'flex-col' : 'flex flex-col sm:flex-row sm:items-center items-start'} body gap-1  w-1/2 flex-wrap lg:flex-nowrap`
 
+
+    var estilo_card2= ''
+    if(props.page=='dias'){
+        estilo_card2= 'dias_card2 lg:flex-1'
+    }
+    else if(props.page=='horas'){
+        estilo_card2= 'lg:flex-1 '
+    }
+
+    var cardStyle= ''
+    var flexStyle= ''
+    var estilo_cnt_campo='flex items-center gap-3'
+
+    if(props.page=='horas'){
+        flexStyle= 'flex flex-row sm:flex-row sm:items-center items-start body gap-3 md:w-full flex-wrap lg:flex-nowrap'
+        cardStyle=`md:w-full text-2xl p-2 lg:p-4 rounded-lg gap-4 cardStyle items-center flex `
+    }
+    else if(props.page=='actual'){
+            flexStyle= 'flex-col flex sm:items-center items-start body gap-1 md:w-full flex-wrap lg:flex-nowrap'
+    }
+    else{
+        flexStyle= `flex flex-row sm:items-center items-center body gap-1 md:w-full  flex-wrap lg:flex-nowrap`
+        cardStyle=`md:w-full text-xl sm:bg-white/50 sm:shadow-md lg:p-4 p-2 rounded-lg text-sm gap-4 cardStyle items-center flex `
+    }
+
+    if(props.page=='actual'){
+        estilo_cnt_campo+="  items-center"
+    }
+    else{
+        estilo_cnt_campo+=" items-end "
+    }
    return(              
         <div className={cardStyle}> 
             <div className={flexStyle}>
@@ -37,15 +66,12 @@ const Card2 = async (props) => {
                 const anteUltimo= detalleKeys.length-2
 
                 return(
-                    <div className={`flex ${i>=anteUltimo? 'mx-0': 'lg:mx-2 mx-1'} gap-1 items-center ${props.page!=='dias' && props.page!=='horas'? 'py-2 last:border-0 border-b border-neutral-600' : ''}`}>
-                    
+                    <div className={`flex ${i>=anteUltimo? 'mx-0': 'lg:mx-2 mx-1'} gap-1 items-center ${props.page=='actual'? 'w-full py-2 last:border-0 border-b border-neutral-600' : ''}`}>                    
                     <div className='text-zinc-700'>
                         {icono ? icono.icono : null }
                     </div>  
-                      { existeClave ?
-                         
-                          <div className="flex items-end gap-3">
-                             
+                      { existeClave ?                         
+                          <div className={estilo_cnt_campo}>                             
                             <p className={`${item.style || '' } mx-1 text-nowrap`}>
                                 {` ${props.elem[item.key]} ${item.u}`}
                             </p>

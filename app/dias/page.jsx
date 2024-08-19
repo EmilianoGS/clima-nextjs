@@ -1,5 +1,6 @@
 import React from 'react'
 import { fetchClima } from '@/app/data/dataClima';
+import { IoMdArrowRoundForward } from 'react-icons/io'
 import Card1 from '../componentes/card1'
 import Card2 from '../componentes/card2'
 import {dia} from '../funciones/fechas'
@@ -25,18 +26,20 @@ const Dias = async (props) => {
                 return(
                   <div className='filaDias last:border-0 border-b border-[#bfbfbf] pb-4'>
                     <p className='mb-2 text-lg text-[#4f5a6f]'>{dia(elem.startTime)}, {fecha}</p>
-                    <div className='flex sm:flex-row flex-col gap-2 items-end lg:items-stretch 
-                    
-                    '>
+                    <div className='flex sm:flex-row flex-col gap-2 items-stretch 
+                    sm:bg-white/0 bg-white/50 sm:p-0 p-3 rounded-lg'>
                       <Suspense fallback={<p>Cargando...</p>}>
                         <Card1 page={'dias'} fecha={fecha} elem={elem.values} />
                         <Card2 page={'dias'} fecha={fecha} elem={elem.values} />
                       </Suspense>
-                      <Link href={`/horas/${elem.startTime}`} className='h-full flex shadow-md w-full sm:w-fit' >
-                        <div className='w-full sm:w-fit flex bg-white/50 rounded-lg p-4 h-full items-center'>
-                          <p className='ftLato'>Por <br/> horas</p>
-                        </div>
-                      </Link> 
+                      <div className="flex">
+                        <Link href={`/horas/${elem.startTime}`} className=' flex sm:shadow-md w-full sm:w-fit' >
+                          <div className='w-full sm:w-fit flex sm:bg-white/50 rounded-lg sm:p-4  p-2 h-full items-center'>
+                            <p className='ftLato font-semibold'>{`Por horas `}</p>
+                            <IoMdArrowRoundForward />
+                          </div>
+                        </Link> 
+                      </div>
                     </div>
                   </div>
                 )
