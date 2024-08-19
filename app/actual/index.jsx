@@ -18,7 +18,7 @@ export default async function Actual() {
    return (
     <>    
       <div className="flex flex-col items-center gap-6 md:grid-cols-4 lg:grid-cols-8 text-midnight w-full">
-        <Suspense fallback={'Cargando...'}>
+        <Suspense fallback={<p className='text-zinc-400 px-3'>Cargando...</p>}>
           <div className="lg:w-2/5 md:w-4/6 w-full">
             <p className='text-2xl text-[#4f5a6f] my-3'>{dia()}, {fecha()}</p>
             <div className='flex gap-y-2 flex-col bg-[#f7f7e642] p-4 rounded-md'>

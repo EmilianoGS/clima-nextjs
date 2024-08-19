@@ -28,7 +28,7 @@ const Dias = async (props) => {
                     <p className='mb-2 text-lg text-[#4f5a6f]'>{dia(elem.startTime)}, {fecha}</p>
                     <div className='flex sm:flex-row flex-col gap-2 items-stretch 
                     sm:bg-white/0 bg-white/50 sm:p-0 p-3 rounded-lg'>
-                      <Suspense fallback={<p>Cargando...</p>}>
+                      <Suspense fallback={<p className='text-zinc-400 px-3'>Cargando...</p>}>
                         <Card1 page={'dias'} fecha={fecha} elem={elem.values} />
                         <Card2 page={'dias'} fecha={fecha} elem={elem.values} />
                       </Suspense>

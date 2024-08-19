@@ -34,23 +34,22 @@ const Card1 = async (props) => {
     // var estilo_card1 = '' 
     var estilo_card1=' sm:bg-white/50 shadow-md p-4 rounded-lg xl:p-4  gap-4 cardStyle '
     if(props.page=='actual'){
-        estilo_card1+= 'actual_st actual_card bg-white/50 ' 
+        estilo_card1+= 'actual_st actual_card bg-white/50 flex-1' 
     }
     else{
         estilo_card1+=' bg-white/10 '
     }
-
     
     var flexStyle= ''
 
     if(props.page=='actual'){
-        flexStyle= 'flex flex-col'
+        flexStyle= 'flex items-center'
     }
     else if(props.page=='dias' || props.page=='horas' ){
-        flexStyle='flex lg:items-end'
+        flexStyle='flex lg:items-end xl:flex-row'
     }
    
-    flexStyle+=` body gap-3 xl:flex-row flex-col lg:flex-nowrap flex-wrap`
+    flexStyle+=` body gap-3 flex-col lg:flex-nowrap flex-wrap`
 
     var estilo_icono = `justify-start lg:justify-center flex-shrink-0 my-2 flex items-center header text-[40px] xl:text-[50px] ${iconoNub || props.elem?.precipitationProbability > 0? 'text-indigo-600' : 'text-orange-500'} px-2 mx-1`
 

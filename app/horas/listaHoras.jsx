@@ -11,8 +11,8 @@ const ListaHoras = (props) => {
  const fontHora='text-lg my-2 text-[#4f5a6f] ftLato text-nowrap'
 
   return (
-    <>
-        <Suspense fallback={<p className='text-zinc-400'>Cargando...</p>}>  
+    <div >
+        <Suspense fallback={<p className='text-zinc-400 px-3'>Cargando...</p>}>  
             <div className='p-4 text-zinc-700 gap-4'>
                 <div className="my-3">
                     <p className='titulo ftGris'>Clima por horas</p>                   
@@ -48,7 +48,7 @@ const ListaHoras = (props) => {
             </div>
            
         </Suspense>
-    </>
+    </div>
   )
 }
 
