@@ -18,6 +18,7 @@
     var data= null;
     const optionsHoras = {
       method: 'POST',
+      cache:'no-store',
       headers: {
         accept: 'application/json',
         'Accept-Encoding': 'gzip',

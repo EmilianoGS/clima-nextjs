@@ -28,6 +28,7 @@ export async function fetchClima(param, fecha=null){
 
     const optionsHoras = {
       method: 'POST',
+      cache: 'no-store',
       headers: {
         accept: 'application/json',
         'Accept-Encoding': 'gzip',
@@ -45,7 +46,7 @@ export async function fetchClima(param, fecha=null){
 
     try {
           if(param=='current'){
-            response = await fetch(`https://api.tomorrow.io/v4/weather/realtime?location=-34.36,-58.22&apikey=${apiKeyMet}`)
+            response = await fetch(`https://api.tomorrow.io/v4/weather/realtime?location=-34.36,-58.22&apikey=${apiKeyMet}`, {cache: 'no-store'})
              data = await response?.json();
           }
           else if(param=='hoy' || param=='dias'){
