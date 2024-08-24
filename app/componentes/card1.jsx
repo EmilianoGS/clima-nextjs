@@ -32,12 +32,12 @@ const Card1 = async (props) => {
     const iconoNub= props.elem?.precipitationProbability < 20 &&  props.elem?.cloudCover>=50
 
     // var estilo_card1 = '' 
-    var estilo_card1=' sm:bg-white/50 shadow-md p-4 rounded-lg xl:p-4  gap-4 cardStyle '
+    var estilo_card1=' sm:bg-white/50 sm:shadow-md p-4 rounded-lg xl:p-4 gap-4 cardStyle '
     if(props.page=='actual'){
         estilo_card1+= 'actual_st actual_card bg-white/50 flex-1' 
     }
     else{
-        estilo_card1+=' bg-white/10 '
+        estilo_card1+=' sm:bg-white/50  bg-white/0'
     }
     
     var flexStyle= ''
