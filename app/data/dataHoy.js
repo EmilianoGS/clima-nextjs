@@ -37,9 +37,9 @@
     };
   
     try {
-          response = await fetch('https://api.tomorrow.io/v4/timelines?apikey=RlMNRNLl5dUBuwDYoGalIrE9EUklc68O', optionsHoras)  
-          
-          data = await response?.json();         
+      
+          response = await fetch('https://api.tomorrow.io/v4/timelines?apikey=RlMNRNLl5dUBuwDYoGalIrE9EUklc68O', optionsHoras)
+          data = await response?.json();                  
           return data;
 
       } catch (error) {

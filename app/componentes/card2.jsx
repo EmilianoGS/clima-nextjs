@@ -12,19 +12,25 @@ const Card2 = async (props) => {
      {key:'humidity',u:'%', style: 'lg:text-xl text-base', desc:'Humedad'},
      {key:'cloudCover',u:'%', style: 'lg:text-xl text-base', desc:'Nubosidad'}, 
      {key:'windSpeed', u:'m/s', style:'lg:text-xl text-base', desc:'Velocidad del viento'}, 
-     {key:'windDirection', u:'°',style:'lg:text-xl text-base', desc: 'Dirección del viento'}
-     ]
+     {key:'windDirection', u:'',style:'lg:text-xl text-base', desc: 'Dirección del viento'}
+    ]
       
-    
+     function getWindDirection(degrees) {
+        if (degrees < 0 || degrees >= 360) {
+          throw new Error('Grados deben estar en el rango de 0 a 359');
+        }      
+        const directions = ['N', 'NE', 'E', 'SE', 'S', 'SO', 'O', 'NO'];
+        const index = Math.round(degrees / 45) % 8;
+        return `${directions[index]}`;
+    }
+
     const iconos=[
         {icono: <PiCloudRain />, key: 'precipitationProbability'},
         {icono: <PiWindLight />, key: 'windSpeed'},
-        {icono: props.page=='actual' ? '' : '-', key: 'windDirection'},
+        {icono: props.page=='actual' ? '' : ' ', key: 'windDirection'},
         {icono: <CiCloudOn />, key: 'cloudCover'},
         {icono: <BsMoisture />, key: 'humidity'}
     ]
-
-
 
     var estilo_card2= ''
     if(props.page=='dias'){
@@ -61,7 +67,7 @@ const Card2 = async (props) => {
             <div className={flexStyle}>
                 {detalleKeys?.map((item,i)=>{
                 
-                const existeClave = Object.keys(props.elem).indexOf(item.key!==-1)   
+                const existeClave =props.elem ? Object.keys(props.elem).indexOf(item.key!==-1) : false 
                 const icono = iconos.find((elem)=> elem.key == item.key) 
                 const anteUltimo= detalleKeys.length-2
 
@@ -73,7 +79,7 @@ const Card2 = async (props) => {
                       { existeClave ?                         
                           <div className={estilo_cnt_campo}>                             
                             <p className={`${item.style || '' } mx-1 text-nowrap`}>
-                                {` ${props.elem[item.key]} ${item.u}`}
+                                {` ${item.key=='windDirection' ?  getWindDirection(props.elem[item.key]) : props.elem[item.key]} ${item.u}`}
                             </p>
                             {props.page=='actual'?
                                 <p className='text-sm'>

@@ -71,7 +71,7 @@ const Card1 = async (props) => {
                 <div className={flexStyle}>
                     {ppalKeys.map((item, i)=>{
                         const st= item.key=='temperatureApparent' ? 'ST' : ''
-                        const existeClave = Object.keys(props.elem).indexOf(item.key!==-1)
+                        const existeClave = props.elem ? Object.keys(props.elem).indexOf(item.key!==-1) : false
                         return(                    
                             <div className='flex'>                        
                                 { existeClave ?                        
