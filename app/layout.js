@@ -12,17 +12,17 @@ export const metadata = {
 // --tw-gradient-to: rgb(255 255 255 / 0%)
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">      
-      <body className="bg-gradient-to-br via-90% from-[#fbdaae] ">
-      <div className="flex  justify-center w-full">
-      <div className='flex-col lg:w-5/6 w-full'>
-          <div className="w-full flex-none">
-            <SideNav />
-          </div>
-          {children}
-      </div>
-      </div>       
-      </body>
+    <html lang="en">          
+        <body className="bg-gradient-to-br via-90% from-[#fbdaae] ">
+        <div className="flex  justify-center w-full">
+        <div className='flex-col lg:w-5/6 w-full'>
+            <div className="w-full flex-none">
+              <SideNav />
+            </div>
+            {children}
+        </div>
+        </div>       
+        </body>      
     </html>
   );
 }
